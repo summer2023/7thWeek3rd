@@ -8,14 +8,18 @@ public class Employee {
     private String name;
     private Integer age;
     private String gender;
+    private long companyId;
+    private Integer salary;
 
     public Employee() { }
 
-    public Employee(long id, String name, Integer age, String gender) {
+    public Employee(long id, String name, Integer age, String gender,long companyId,Integer salary) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.gender = gender;
+        this.companyId = companyId;
+        this.salary = salary;
     }
 
     public long getId() {
@@ -54,6 +58,25 @@ public class Employee {
         return this;
     }
 
+    public long getCompanyId() {
+        return companyId;
+    }
+
+    public Employee setCompanyId(long companyId) {
+        this.companyId = companyId;
+        return this;
+    }
+
+    public Integer getSalary() {
+        return salary;
+    }
+
+    public Employee setSalary(Integer salary) {
+        this.salary= salary;
+        return this;
+    }
+
+
     @Override
     public String toString() {
         Map<String, Object> map = new HashMap<>();
@@ -61,6 +84,9 @@ public class Employee {
         map.put("name", this.name);
         map.put("age", this.age);
         map.put("gender", this.gender);
+        map.put("companyId", this.companyId);
+        map.put("salary", this.salary);
+
         return map.toString();
     }
 

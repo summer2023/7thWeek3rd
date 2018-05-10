@@ -51,5 +51,4 @@ public class Company {
         map.put("employeesNumber", this.employeesNumber);
         return map.toString();
     }
-
 }
