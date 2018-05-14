@@ -1,19 +1,35 @@
 package com.example.employee.entity;
 
-import java.util.HashMap;
-import java.util.Map;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
 public class Employee {
-    private long id;
+    @Id
+    @GeneratedValue
+    private Integer id;
+
+    @Column(nullable = false)
     private String name;
+
+    @Column(nullable = false)
     private Integer age;
+
+    @Column
     private String gender;
-    private long companyId;
+
+    @Column(nullable = false)
+    private Integer companyId;
+
+    @Column(nullable = false)
     private Integer salary;
 
-    public Employee() { }
+    public Employee() {
+    }
 
-    public Employee(String name, Integer age, String gender,Integer salary,long id,long companyId) {
+    public Employee(Integer id, String name, Integer age, String gender, Integer companyId, Integer salary) {
         this.id = id;
         this.name = name;
         this.age = age;
@@ -22,72 +38,52 @@ public class Employee {
         this.salary = salary;
     }
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public Employee setId(long id) {
+    public void setId(Integer id) {
         this.id = id;
-        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public Employee setName(String name) {
+    public void setName(String name) {
         this.name = name;
-        return this;
     }
 
     public Integer getAge() {
         return age;
     }
 
-    public Employee setAge(Integer age) {
+    public void setAge(Integer age) {
         this.age = age;
-        return this;
     }
 
     public String getGender() {
         return gender;
     }
 
-    public Employee setGender(String gender) {
+    public void setGender(String gender) {
         this.gender = gender;
-        return this;
     }
 
-    public long getCompanyId() {
+    public Integer getCompanyId() {
         return companyId;
     }
 
-    public Employee setCompanyId(long companyId) {
+    public void setCompanyId(Integer companyId) {
         this.companyId = companyId;
-        return this;
     }
 
     public Integer getSalary() {
         return salary;
     }
 
-    public Employee setSalary(Integer salary) {
-        this.salary= salary;
-        return this;
+    public void setSalary(Integer salary) {
+        this.salary = salary;
     }
-
-
-    @Override
-    public String toString() {
-        Map<String, Object> map = new HashMap<>();
-        map.put("id", this.id);
-        map.put("name", this.name);
-        map.put("age", this.age);
-        map.put("gender", this.gender);
-        map.put("companyId", this.companyId);
-        map.put("salary", this.salary);
-
-        return map.toString();
-    }
-
 }
+
